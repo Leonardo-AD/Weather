@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+
+    --bg-color: #6D67D0;
+    --text-soft-color: #C2BFF4;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+main {
+    background: url('./assets/background.jpg') no-repeat center/cover;
+    min-height: 100vh;
+
+    display: grid;
+    place-content: center; 
+    gap: 2.4rem;  
+}
+
+
+/* Temperature section */
+section {
+    background: var(--bg-color);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+}
+
+.temperature-now {
+    background: url('./assets/bg-temperature-now.jpg');
+    width: 48rem;
+    height: 48rem;
+    position: relative;
+
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.temperature-now::before {
+    content: "";
+    width: 17.6rem;
+    height: 17.6rem;
+
+    background: url('./assets/cloud.svg') no-repeat;
+    position: absolute;
+    top: -5.6rem;
+    left: -5.6rem;
+}
+
+.location {
+    justify-self: end;
+    padding: 3.2rem 3.2rem 0;
+
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.location strong {
+    font-size: 1.4rem;
+    color: var(--text-soft-color);
+}
+
+.temperature-info {
+    margin: 6rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.temperature-info .number {
+    text-align: center;
+    font-size: 8.8rem;
+    color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.temperature-info .number .max-min {
+    font-size: 2rem;
+}
+
+.temperature-info .number .max-min span {
+    color: var(--text-soft-color);
+}
+
+.celsius {
+    font-size: 2.4rem;
+    color: #DAD8F7;
+    margin-top: 1.5rem;
+}
+
+.statistics {
+    padding: 1.2rem;
+    display: flex;
+    gap: .8rem;
+}
+
+.stats {
+    flex: 1;
+    padding: 1.2rem 1.6rem;
+    background: rgba(102, 96, 200, 0.6);
+    border-radius: .6rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.stats .info {
+    color: #E7E6FB;
+}
+
+.stats .info h5 span,
+.stats .info p {
+    font-size: 1.2rem;
+}
+
+.stats .info h5 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: baseline;
+    gap: .4rem;
+}
+
+
+/* Air quality section */
+.air-quality {
+    font-weight: 700;
+    text-align: center;
+    display: grid;
+}
+
+h2.air-quality-title {
+    font-size: 1.6rem;
+    color: #DAD8F7;
+    margin-top: 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+}
+
+.air-quality .quality-status {
+    margin-top: 3.2rem;
+    font-size: 1.8rem;
+    color: #87EBCD;
+}
+
+.air-quality .quality-status-rate {
+    margin-top: .4rem;
+    font-size: 4rem;
+    color: #E7E6FB;
+}

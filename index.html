@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather</title>
+</head>
+<body>
+    
+    <main>
+        <section class="temperature-now">
+            <div class="location">
+                <img src="./assets/pin.svg" alt="ícone de localização">
+                <strong>Rio do Sul, SC</strong>
+            </div>
+            
+            <div class="temperature-info">
+                <div class="number">
+                    18
+                    <div class="max-min">
+                        22° 
+                        <span>16°</span>
+                    </div>
+                </div>
+
+                <div class="celsius">°C</div>
+            </div>
+            
+            <div class="statistics">
+                <div class="stats">
+                    <img src="./assets/temp-wind.svg" alt="ícone de vento">
+                    <div class="info">
+                        <p>Vento</p>
+                        <h5>17 <span>km/h</span></h5>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <img src="./assets/temp-humidity.svg" alt="ícone de Umidade">
+                    <div class="info">
+                        <p>Umidade</p>
+                        <h5>31 <span>%</span></h5>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <img src="./assets/temp-rainy.svg" alt="ícone de chuva">
+                    <div class="info">
+                        <p>Chuva</p>
+                        <h5>10 <span>%</span></h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="air-quality">
+            <h2 class="air-quality-title">
+                <img src="./assets/leaf.svg" alt="ícone de uma folha de árvore">
+                Qualidade do ar
+            </h2>
+
+            <p class="quality-status">Boa</p>
+            <p class="quality-status-rate">21</p>
+
+            <div class="info"></div>
+        </section>
+    </main>
+
+</body>
+</html>
