@@ -24,6 +24,7 @@ main {
 
     display: grid;
     place-content: center; 
+    padding: 6.4rem;
     gap: 2.4rem;  
 }
 
@@ -37,8 +38,6 @@ section {
 
 .temperature-now {
     background: url('./assets/bg-temperature-now.jpg');
-    width: 48rem;
-    height: 48rem;
     position: relative;
 
     display: grid;
@@ -165,3 +164,31 @@ h2.air-quality-title {
     font-size: 4rem;
     color: #E7E6FB;
 }
+
+.air-quality .info {
+    display: flex;
+    align-items: center;
+    margin-top: 3.2rem;
+    padding: 0 1.6rem 1.6rem;
+}
+
+.air-quality .info .number {
+    flex: 1;
+}
+
+.air-quality .info p {
+    color: #87EBCD;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: .08rem;
+}
+
+.air-quality .info small {
+    font-size: 1.2rem;
+    color: #E7E6FB;
+    font-weight: 400;
+    letter-spacing: .08rem;
+}
+
+
+/* Sun time */
