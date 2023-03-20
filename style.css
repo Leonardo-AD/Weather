@@ -99,6 +99,7 @@ section {
     font-size: 2.4rem;
     color: #DAD8F7;
     margin-top: 1.5rem;
+    letter-spacing: .08rem;
 }
 
 .statistics {
@@ -142,7 +143,7 @@ section {
     display: grid;
 }
 
-h2.air-quality-title {
+h2.title {
     font-size: 1.6rem;
     color: #DAD8F7;
     margin-top: 3.2rem;
@@ -192,3 +193,28 @@ h2.air-quality-title {
 
 
 /* Sun time */
+.sun-chart-wrapper {
+    margin-top: 4rem;
+    height: 11rem;
+}
+
+.sun-chart {
+    margin: auto;
+    width: 21.6rem;
+    height: 21.6rem;
+    position: relative;
+}
+
+.sun-chart::before {
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    background: #F6C833;
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+    margin: -.6rem;
+    transform: rotate(-180deg) translate(10.6rem);
+}
