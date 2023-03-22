@@ -199,6 +199,7 @@ h2.title {
 }
 
 .sun-chart {
+    --pos-x: 50;
     margin: auto;
     width: 21.6rem;
     height: 21.6rem;
@@ -216,5 +217,27 @@ h2.title {
     top: 50%;
     left: 50%;
     margin: -.6rem;
-    transform: rotate(-180deg) translate(10.6rem);
+    transform: rotate(calc( 1deg * (( (100 - var(--pos-x)) / -100 ) * 180) )) translate(10.6rem);
+}
+
+.chart::before {
+    content: "";
+    width: 21.6rem;
+    height: 21.6rem;
+    display: block;
+    border: 1px solid red;
+
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(251, 219, 96, 0.2) 0%, rgba(251, 219, 96, 0) 101.89%);
+    
+    --mask: linear-gradient(0deg, #FFFFFF 50%, transparent 0%);
+    mask: var(--mask);
+    -webkit-mask: var(--mask);
+    
+    rotate: 90deg;
+}
+
+.chart img {
+    position: absolute;
+    top: 0;
 }
