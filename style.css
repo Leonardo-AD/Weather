@@ -317,3 +317,25 @@ h4.title {
         grid-column: 2/4;
     }
 }
+
+@media (max-width: 600px) {
+    .temperature-now,
+    .air-quality,
+    .sun-time,
+    .week-weather {
+        max-width: 40.5rem;
+    }
+
+    .temperature-now::before {
+        top: -3.8rem;
+        left: -.5rem;
+    }
+
+    .week-weather {
+        justify-content: center;
+    }
+
+    main {
+        background: #c7c4ff;
+    }
+}
