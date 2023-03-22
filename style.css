@@ -323,7 +323,7 @@ h4.title {
     .air-quality,
     .sun-time,
     .week-weather {
-        max-width: 40.5rem;
+        max-width: 38rem;
     }
 
     .temperature-now::before {
@@ -331,8 +331,20 @@ h4.title {
         left: -.5rem;
     }
 
+    .statistics {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .stats {
+        padding: 1rem;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
     .week-weather {
         justify-content: center;
+        gap: 1rem;
     }
 
     main {
