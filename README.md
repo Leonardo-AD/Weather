@@ -13,6 +13,10 @@
 
 <img src="./assets/interface.png" width="700"/>
 
+<p>Mobile version</p>
+
+<img src="./assets/mobile.png"/>
+
 ## Prototype
 
 You can access the Rocketseat prototype by clicking the button below.
