@@ -318,6 +318,123 @@ h4.title {
     }
 }
 
+@media (max-width: 390px) {
+    main {
+        background: #c7c4ff;
+        padding: 6.4rem 0;
+    }
+
+    .temperature-now,
+    .air-quality,
+    .sun-time,
+    .week-weather {
+        max-width: 31rem;
+    }
+
+    .temperature-now::before {
+        background: none;
+    }
+
+    .statistics {
+        justify-content: center;
+        padding: 1rem 0;
+        gap: .5rem;
+    }
+
+    .stats {
+        padding: 1rem 0;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        max-width: 10rem;
+    }
+
+    .stats .info h5 {
+        font-size: 1.5rem;
+    }
+
+    .statistics .stats img {
+        width: 3rem;
+        height: 3rem;
+    } 
+
+    .week-weather {
+        justify-content: center;
+        gap: .5rem;
+        padding: 4rem .5rem;
+    }
+
+    .week-weather .day img{
+        width: 5rem;
+    }
+
+    .week-weather .day h4 {
+        font-size: 1.3rem;
+    }
+
+    .week-weather .day p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    main {
+        background: #c7c4ff;
+        padding: 6.4rem 0;
+    }
+
+    .temperature-now,
+    .air-quality,
+    .sun-time,
+    .week-weather {
+        width: 37rem;
+    }
+
+    .temperature-now::before {
+        background: none;
+    }
+
+    .statistics {
+        justify-content: center;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .stats {
+        padding: 1rem .5rem;
+        align-items: center;
+        gap: 1rem;
+        max-width: 11rem;
+    }
+
+    .stats .info h5 {
+        font-size: 1.5rem;
+    }
+
+    .statistics .stats img {
+        width: 3rem;
+        height: 3rem;
+    } 
+
+    .week-weather {
+        justify-content: center;
+        gap: .5rem;
+        padding: 4rem .5rem;
+    }
+
+    .week-weather .day img{
+        width: 5rem;
+    }
+
+    .week-weather .day h4 {
+        font-size: 1.3rem;
+    }
+
+    .week-weather .day p {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 600px) {
     main {
         background: #c7c4ff;
@@ -328,7 +445,7 @@ h4.title {
     .air-quality,
     .sun-time,
     .week-weather {
-        max-width: 100%;
+        width: 37rem;
     }
 
     .temperature-now::before {
@@ -337,8 +454,8 @@ h4.title {
 
     .statistics {
         justify-content: center;
-        padding: 1rem 1rem;
-        gap: .5rem;
+        padding: 1rem 0;
+        gap: 1rem;
     }
 
     .stats {
