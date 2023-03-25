@@ -49,14 +49,14 @@ section {
     width: 17.6rem;
     height: 17.6rem;
 
-    background: url('./assets/cloud.svg') no-repeat;
+    /* background: url('./assets/cloud.svg') no-repeat; */
     position: absolute;
     top: -5.6rem;
     left: -5.6rem;
 }
 
 .location {
-    justify-self: end;
+    justify-content: space-between;
     padding: 3.2rem 3.2rem 0;
 
     display: flex;
@@ -64,7 +64,12 @@ section {
     gap: .4rem;
 }
 
-.location strong {
+.selected-city {
+    display: flex;
+    align-items: center;
+}
+
+.selected-city strong {
     font-size: 1.4rem;
     color: var(--text-soft-color);
 }
@@ -324,6 +329,16 @@ h4.title {
         padding: 6.4rem 0;
     }
 
+    .location {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selected-city {
+        top: 80%;
+        position: relative;
+    }
+
     .temperature-now,
     .air-quality,
     .sun-time,
@@ -383,6 +398,16 @@ h4.title {
         padding: 6.4rem 0;
     }
 
+    .location {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selected-city {
+        top: 80%;
+        position: relative;
+    }
+
     .temperature-now,
     .air-quality,
     .sun-time,
@@ -439,6 +464,16 @@ h4.title {
     main {
         background: #c7c4ff;
         padding: 6.4rem 0;
+    }
+
+    .location {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selected-city {
+        top: 80%;
+        position: relative;
     }
 
     .temperature-now,

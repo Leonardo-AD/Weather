@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +19,15 @@
     <main>
         <section class="temperature-now">
             <div class="location">
-                <img src="./assets/pin.svg" alt="ícone de localização">
-                <strong>Rio do Sul, SC</strong>
+                <div class="search">
+                    <input type="text" placeholder="Escolher cidade" class="search-city-input">
+                    <button class="material-symbols-outlined">search</button>
+                </div>
+
+                <div class="selected-city">
+                    <img src="./assets/pin.svg" alt="ícone de localização">
+                    <strong>Rio do Sul, SC</strong>
+                </div>
             </div>
             
             <div class="temperature-info">
