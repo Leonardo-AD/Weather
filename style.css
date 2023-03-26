@@ -36,6 +36,43 @@ section {
     border-radius: 1rem;
 }
 
+.search {
+    display: flex;
+    justify-content: center;
+    gap: .15rem;
+}
+
+.search input::placeholder {
+    color: #C2BFF4;
+    letter-spacing: .05rem;
+    font-size: 1.4rem;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    border-radius: .6rem;
+    padding: .8rem .8rem;
+    max-width: 17rem;
+
+    font-size: 1.4rem;
+    letter-spacing: .08rem;
+    color: #FFFFFF;
+
+    background: rgba(74, 71, 150, 0.6);
+}
+
+.search button {
+    outline: none;
+    color: #C2BFF4;
+    background: rgba(74, 71, 150, 0.6);
+    border: none;
+    padding: .5rem;
+    border-radius: .6rem;
+    cursor: pointer;
+    font-size: 2.2rem;
+}
+
 .temperature-now {
     background: url('./assets/bg-temperature-now.jpg');
     position: relative;
@@ -44,16 +81,16 @@ section {
     grid-template-rows: max-content 1fr max-content;
 }
 
-.temperature-now::before {
+/* .temperature-now::before {
     content: "";
     width: 17.6rem;
     height: 17.6rem;
 
-    /* background: url('./assets/cloud.svg') no-repeat; */
+    background: url('./assets/cloud.svg') no-repeat;
     position: absolute;
     top: -5.6rem;
     left: -5.6rem;
-}
+} */
 
 .location {
     justify-content: space-between;
