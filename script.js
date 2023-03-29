@@ -3,6 +3,7 @@
 
 // https://www.youtube.com/watch?v=iILFBGm_I9M&list=WL&index=240&t=16s
 
+import { APIKey } from "./utils.js"
 
 // const searchInput = document.querySelector('#search-input')
 const searchButton = document.querySelector('#search-button')
@@ -11,18 +12,21 @@ const windSpeed = document.querySelector('#wind-speed')
 const humidity = document.querySelector('#humidity')
 
 searchButton.addEventListener('click', () => {
-    const APIKey = 'email'
+    // const APIKey = 'email'
     const city = document.querySelector('#search-input').value
 
-    if(!city || city == ''){
+    if(!city || city == ''){   // ALTERAR TAMANHO DO ALERT!!!
         
         Swal.fire({
             title: "Não foi possível localizar",
             text: "Por favor, digite novamente.",
-            icon: "error"
+            icon: "error",
+            background: "#E7E6FB"
           })
     
           return
+    }else{
+        alert(APIKey)
     }
 
 })
