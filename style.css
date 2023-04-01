@@ -59,7 +59,7 @@ section {
     letter-spacing: .08rem;
     color: #FFFFFF;
 
-    background: rgba(74, 71, 150, 0.6);
+    background: rgba(102, 96, 200, 1);
     animation: width-animation-out .5s ease-out;
 }
 
@@ -93,7 +93,7 @@ section {
 .search button {
     outline: none;
     color: #C2BFF4;
-    background: rgba(74, 71, 150, 0.6);
+    background: rgba(102, 96, 200, 1);
     border: none;
     padding: .5rem;
     border-radius: .6rem;
@@ -107,7 +107,7 @@ section {
 }
 
 .temperature-now {
-    background: url('./assets/bg-temperature-now.jpg');
+    /* background: url('./assets/weather-cloudy.jpg'); */
     position: relative;
 
     display: grid;
