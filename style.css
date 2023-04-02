@@ -109,7 +109,6 @@ section {
 .temperature-now {
     /* background: url('./assets/weather-cloudy.jpg'); */
     position: relative;
-
     display: grid;
     grid-template-rows: max-content 1fr max-content;
 }
@@ -152,7 +151,7 @@ section {
     gap: .4rem;
 }
 
-.temperature-info .number {
+.temperature-info .number div{
     text-align: center;
     font-size: 8.8rem;
     color: #FFFFFF;
@@ -162,11 +161,18 @@ section {
     gap: .4rem;
 }
 
-.temperature-info .number .max-min {
-    font-size: 2rem;
+.temperature-info .number{
+    text-align: center;
 }
 
-.temperature-info .number .max-min span {
+.temperature-info .number #max-temperature{
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-right: .5rem;
+}   
+
+.temperature-info .number #min-temperature {
+    font-size: 2rem;
     color: var(--text-soft-color);
 }
 

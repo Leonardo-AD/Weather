@@ -12,7 +12,9 @@ import {
     windSpeed, 
     humidity,
     APIKey,
-    background
+    background,
+    maxTemp,
+    minTemp
 
 } from './export.js'
 
@@ -44,6 +46,7 @@ searchButton.addEventListener('click', () => {
         }
 
         switch (json.weather[0].main) {
+            
             case 'Clear':
                 background.style.backgroundImage = 'url(./assets/weather-sunny.png)'; 
                 break;
@@ -79,6 +82,10 @@ searchButton.addEventListener('click', () => {
         windSpeed.innerHTML = `${parseInt(json.wind.speed)} <span>km/h</span>`
 
         selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
+
+        maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
+
+        minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
 
         console.log(json)
     })

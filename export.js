@@ -11,3 +11,7 @@ export const humidity = document.querySelector('#humidity')
 export const APIKey = 'd5c9103c9c7225eb8814a372432fd7e9'
 
 export const background = document.querySelector('.temperature-now')
+
+export const maxTemp = document.querySelector('#max-temperature')
+
+export const minTemp = document.querySelector('#min-temperature')
