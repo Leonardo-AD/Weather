@@ -14,7 +14,8 @@ import {
     APIKey,
     background,
     maxTemp,
-    minTemp
+    minTemp,
+    rainStats
 
 } from './export.js'
 
@@ -45,30 +46,35 @@ searchButton.addEventListener('click', () => {
               })
         }
 
-        switch (json.weather[0].main) {
-            
+        switch (json.weather[0].main) { 
             case 'Clear':
-                background.style.backgroundImage = 'url(./assets/weather-sunny.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-sunny.png)'
+                rainStats.innerHTML = `0 <span>%</span>` 
                 break;
 
             case 'Rain':
-                background.style.backgroundImage = 'url(./assets/weather-rainy.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-rainy.png)'
+                rainStats.innerHTML = `60 <span>%</span>`
                 break;
             
             case 'Snow':
-                background.style.backgroundImage = 'url(./assets/weather-snow.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-snow.png)'
+                rainStats.innerHTML = `0 <span>%</span>`
                 break;
             
             case 'Storm':
-                background.style.backgroundImage = 'url(./assets/weather-storm.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-storm.png)'
+                rainStats.innerHTML = `50 <span>%</span>`
                 break;
 
             case 'Clouds':
-                background.style.backgroundImage = 'url(./assets/weather-partly-cloudy.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-partly-cloudy.png)'
+                rainStats.innerHTML = `5 <span>%</span>`
                 break;
                
             case 'Haze':
-                background.style.backgroundImage = 'url(./assets/weather-cloudy.png)'; 
+                background.style.backgroundImage = 'url(./assets/weather-cloudy.png)'
+                rainStats.innerHTML = `10 <span>%</span>`
                 break; 
 
             default:
@@ -90,4 +96,4 @@ searchButton.addEventListener('click', () => {
         console.log(json)
     })
 
-})  
+}) 

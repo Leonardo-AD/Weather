@@ -15,3 +15,15 @@ export const background = document.querySelector('.temperature-now')
 export const maxTemp = document.querySelector('#max-temperature')
 
 export const minTemp = document.querySelector('#min-temperature')
+
+export const rainStats = document.querySelector('#rain')
+
+// AIR QUALITY
+// fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid=${APIKey}`) RAIN % HERE
+// https://openweathermap.org/api/air-pollution
+
+// All options here
+// https://openweathermap.org/price
+
+// Previsões durante dias
+// https://openweathermap.org/widgets-constructor
