@@ -1,11 +1,4 @@
-// https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appid={API key}
-// Test the URL above in: https://openweathermap.org/api/hourly-forecast#JSON
-
-// https://www.youtube.com/watch?v=iILFBGm_I9M&list=WL&index=240&t=16s
-// http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={APIkey} read the parameters
-
 import {
-
     searchButton, 
     selectedCity, 
     weatherTemperature, 
@@ -16,7 +9,7 @@ import {
     maxTemp,
     minTemp,
     rainStats
-
+    
 } from './export.js'
 
 searchButton.addEventListener('click', () => {
@@ -32,7 +25,7 @@ searchButton.addEventListener('click', () => {
           })
     }
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())
     .then(json => {
         
@@ -81,19 +74,30 @@ searchButton.addEventListener('click', () => {
                 break;
         }
 
+        
+        // Adding data
         weatherTemperature.innerHTML = `${parseInt(json.main.temp)}`
-
         humidity.innerHTML = `${json.main.humidity} <span>%</span>`
-
         windSpeed.innerHTML = `${parseInt(json.wind.speed)} <span>km/h</span>`
-
         selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
-
         maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
-
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
-
+        
         console.log(json)
+
+        function airQuality(){
+            const lat = json.coord.lat
+            const lon = json.coord.lon
+
+            fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
+            .then(res => res.json())
+            .then(json => {
+                console.log(json, "aqui")
+            })
+        }
+
+        airQuality()
+
     })
 
 }) 

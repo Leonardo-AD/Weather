@@ -18,8 +18,12 @@ export const minTemp = document.querySelector('#min-temperature')
 
 export const rainStats = document.querySelector('#rain')
 
-// AIR QUALITY
-// fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid=${APIKey}`) RAIN % HERE
+
+// https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
+// Show the condition bellow the min and max temperature - clouds -> nuvens...
+// Get user location
+// Hidden fields before a search
+
 // https://openweathermap.org/api/air-pollution
 
 // All options here
@@ -27,3 +31,9 @@ export const rainStats = document.querySelector('#rain')
 
 // Previsões durante dias
 // https://openweathermap.org/widgets-constructor
+
+// https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appid={API key}
+// Test the URL above in: https://openweathermap.org/api/hourly-forecast#JSON
+
+// https://www.youtube.com/watch?v=iILFBGm_I9M&list=WL&index=240&t=16s
+// http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={APIkey} read the parameters
