@@ -18,6 +18,11 @@ export const minTemp = document.querySelector('#min-temperature')
 
 export const rainStats = document.querySelector('#rain')
 
+export const locationIcon = document.querySelector('#location-icon')
+
+
+// AQI below
+// https://iema.es.gov.br/Media/iema/CQAI/Cartilha/Guia_Qualidade_Ar_ebook.pdf
 
 // https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
 // Show the condition bellow the min and max temperature - clouds -> nuvens...
