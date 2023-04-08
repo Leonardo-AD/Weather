@@ -1,3 +1,4 @@
+// Temperature section
 export const searchButton = document.querySelector('#search-button')
 
 export const selectedCity = document.querySelector('#selected-city-name')
@@ -25,6 +26,18 @@ export const locationIcon = document.querySelector('#location-icon')
 export const qualityStatus = document.querySelector('.quality-status')
 
 export const qualityStatusRate = document.querySelector('.quality-status-rate')
+
+export const pm2_5 = document.querySelector('#pm2_5')
+
+export const pm10 = document.querySelector('#pm10')
+
+export const so2 = document.querySelector('#so2')
+
+export const no2 = document.querySelector('#no2')
+
+export const o3 = document.querySelector('#o3')
+
+export const co = document.querySelector('#co')
 
 
 // AQI below

@@ -1,1 +1,0 @@
-// With the button click we can call the APIKey and get lat and lon values

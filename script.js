@@ -11,7 +11,13 @@ import {
     rainStats,
     locationIcon,
     qualityStatus,
-    qualityStatusRate
+    qualityStatusRate,
+    pm2_5,
+    pm10,
+    so2,
+    no2,
+    o3,
+    co
     
 } from './export.js'
 
@@ -93,13 +99,14 @@ searchButton.addEventListener('click', () => {
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
     
         console.log(json)
+    
         
         // Air quality section
-        function airQuality(){
+        async function airQuality(){
             const lat = json.coord.lat
             const lon = json.coord.lon
 
-            fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
+            await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
             .then(res => res.json())
             .then(json => {
 
@@ -127,12 +134,18 @@ searchButton.addEventListener('click', () => {
                     qualityStatus.innerHTML = "Péssima"
                     qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
                 }
+
+                pm2_5.innerHTML = json.list[0].components.pm2_5.toFixed(0)
+                pm10.innerHTML = json.list[0].components.pm10.toFixed(0)
+                so2.innerHTML = json.list[0].components.so2.toFixed(0)
+                no2.innerHTML = json.list[0].components.no2.toFixed(0)
+                o3.innerHTML = json.list[0].components.o3.toFixed(0)
+                co.innerHTML = json.list[0].components.co.toFixed(0)
                 
                 console.log(json, "aqui")
             })
         }
 
         airQuality()
-
     })
 }) 
