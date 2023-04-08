@@ -39,7 +39,6 @@ section {
 .search {
     display: flex;
     justify-content: center;
-    gap: .3rem;
 }
 
 .search input::placeholder {
@@ -51,8 +50,8 @@ section {
 .search input {
     outline: none;
     border: none;
-    border-radius: .6rem;
-    padding: .8rem .8rem;
+    border-radius: .6rem 0 0 .6rem;
+    padding: .8rem 0 .8rem .8rem;
     max-width: 12.5rem;
 
     font-size: 1.4rem;
@@ -96,14 +95,9 @@ section {
     background: rgba(102, 96, 200, 1);
     border: none;
     padding: .5rem;
-    border-radius: .6rem;
+    border-radius: 0 .6rem .6rem 0;
     cursor: pointer;
     font-size: 2.2rem;
-    transition: transform .3s;
-}
-
-.search button:active {
-    transform: scale(1.1);
 }
 
 .temperature-now {

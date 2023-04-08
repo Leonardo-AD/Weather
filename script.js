@@ -9,7 +9,9 @@ import {
     maxTemp,
     minTemp,
     rainStats,
-    locationIcon
+    locationIcon,
+    qualityStatus,
+    qualityStatusRate
     
 } from './export.js'
 
@@ -82,16 +84,17 @@ searchButton.addEventListener('click', () => {
         }
 
         
-        // Adding data
+        // Adding data in the temperature section
         weatherTemperature.innerHTML = `${parseInt(json.main.temp)}`
         humidity.innerHTML = `${json.main.humidity} <span>%</span>`
         windSpeed.innerHTML = `${parseInt(json.wind.speed)} <span>km/h</span>`
         selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
         maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
-        
+    
         console.log(json)
-
+        
+        // Air quality section
         function airQuality(){
             const lat = json.coord.lat
             const lon = json.coord.lon
@@ -99,6 +102,32 @@ searchButton.addEventListener('click', () => {
             fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
             .then(res => res.json())
             .then(json => {
+
+                if(json.list[0].main.aqi == 0 || json.list[0].main.aqi <= 40){
+                    qualityStatus.innerHTML = "Boa"
+                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
+                }
+
+                else if(json.list[0].main.aqi >= 41 || json.list[0].main.aqi <= 80){
+                    qualityStatus.innerHTML = "Moderada"
+                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
+                }
+
+                else if(json.list[0].main.aqi >= 81 || json.list[0].main.aqi <= 120){
+                    qualityStatus.innerHTML = "Ruim"
+                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
+                }
+
+                else if(json.list[0].main.aqi >= 121 || json.list[0].main.aqi <= 200){
+                    qualityStatus.innerHTML = "Muito ruim"
+                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
+                }
+                
+                else{
+                    qualityStatus.innerHTML = "Péssima"
+                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
+                }
+                
                 console.log(json, "aqui")
             })
         }
@@ -106,5 +135,4 @@ searchButton.addEventListener('click', () => {
         airQuality()
 
     })
-
 }) 

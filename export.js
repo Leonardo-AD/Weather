@@ -21,6 +21,12 @@ export const rainStats = document.querySelector('#rain')
 export const locationIcon = document.querySelector('#location-icon')
 
 
+// Air quality section
+export const qualityStatus = document.querySelector('.quality-status')
+
+export const qualityStatusRate = document.querySelector('.quality-status-rate')
+
+
 // AQI below
 // https://iema.es.gov.br/Media/iema/CQAI/Cartilha/Guia_Qualidade_Ar_ebook.pdf
 
