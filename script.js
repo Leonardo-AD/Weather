@@ -102,11 +102,11 @@ searchButton.addEventListener('click', () => {
     
         
         // Air quality section
-        async function airQuality(){
+        function airQuality(){
             const lat = json.coord.lat
             const lon = json.coord.lon
 
-            await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
+            fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
             .then(res => res.json())
             .then(json => {
 
