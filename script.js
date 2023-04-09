@@ -1,4 +1,4 @@
-import {
+ import {
     searchButton, 
     selectedCity, 
     weatherTemperature, 
@@ -17,10 +17,27 @@ import {
     so2,
     no2,
     o3,
-    co
+    co,
+    sunrise,
+    sunset,
+    timeNow
     
 } from './export.js'
 
+
+// Getting current hours and minutes
+let getTimeNow = new Date()
+timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+
+setInterval(() => {
+
+    let getTimeNow = new Date()
+    timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+
+}, 5000)
+
+
+// Getting click to search
 searchButton.addEventListener('click', () => {
     const city = document.querySelector('#search-input').value
 
@@ -97,16 +114,23 @@ searchButton.addEventListener('click', () => {
         selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
         maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
-    
-        console.log(json)
-    
+
+
+        // Adding sunrise and sunset times
+        let getTimezone = json.timezone
+        let getSunrise = json.sys.sunrise
+        let getSunset =  json.sys.sunset
+        
+        sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
+        sunset.innerHTML = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
+
         
         // Air quality section
         function airQuality(){
             const lat = json.coord.lat
             const lon = json.coord.lon
 
-            fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
+            fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
             .then(res => res.json())
             .then(json => {
 

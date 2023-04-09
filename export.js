@@ -40,8 +40,16 @@ export const o3 = document.querySelector('#o3')
 export const co = document.querySelector('#co')
 
 
-// AQI below
-// https://iema.es.gov.br/Media/iema/CQAI/Cartilha/Guia_Qualidade_Ar_ebook.pdf
+// Sunrise and sunset section
+export const sunrise = document.querySelector('.sunrise')
+
+export const sunset = document.querySelector('.sunset')
+
+export const timeNow = document.querySelector('.now')
+
+
+// calculate the circle of sun with timeNow
+// remove with background from input
 
 // https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
 // Show the condition bellow the min and max temperature - clouds -> nuvens...
