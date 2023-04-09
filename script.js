@@ -27,12 +27,24 @@
 
 // Getting current hours and minutes
 let getTimeNow = new Date()
-timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+
+if(getTimeNow.getMinutes() < 10){
+    timeNow.innerHTML = `${getTimeNow.getHours()}:0${getTimeNow.getMinutes()}`
+}
+else{
+    timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+}
 
 setInterval(() => {
 
     let getTimeNow = new Date()
-    timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+
+    if(getTimeNow.getMinutes() < 10){
+        timeNow.innerHTML = `${getTimeNow.getHours()}:0${getTimeNow.getMinutes()}`
+    }
+    else{
+        timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
+    }
 
 }, 5000)
 
