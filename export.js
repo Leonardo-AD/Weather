@@ -49,7 +49,20 @@ export const timeNow = document.querySelector('.now')
 
 
 // calculate the circle of sun with timeNow
-// remove with background from input
+// alter hour, show hour from the city of input
+// clear input value after search
+// hidden values before get api results
+//input:-internal-autofill-selected change it
+
+
+
+
+
+
+
+
+
+
 
 // https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
 // Show the condition bellow the min and max temperature - clouds -> nuvens...

@@ -47,7 +47,7 @@ section {
     font-size: 1.4rem;
 }
 
-.search input {
+.search input { 
     outline: none;
     border: none;
     border-radius: .6rem 0 0 .6rem;
@@ -431,6 +431,14 @@ h4.title {
         justify-content: center;
         gap: 1.5rem;
         max-width: 10rem;
+    }
+
+    #stats-wind {
+        border-radius: 0 .6rem .6rem 0;
+    }
+    
+    #stats-rainy {
+        border-radius: .6rem 0 0 .6rem;
     }
 
     .stats .info h5 {

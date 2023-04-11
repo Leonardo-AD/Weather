@@ -180,8 +180,10 @@ searchButton.addEventListener('click', () => {
                 
                 console.log(json, "aqui")
             })
+
         }
 
         airQuality()
     })
-}) 
+    
+})

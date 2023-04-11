@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
 
     <title>Weather</title>
 </head>
@@ -47,7 +47,7 @@
             </div>
             
             <div class="statistics">
-                <div class="stats">
+                <div class="stats" id="stats-wind">
                     <img src="./assets/temp-wind.svg" alt="ícone de vento">
                     <div class="info">
                         <p>Vento</p>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="stats">
+                <div class="stats" id="stats-humidity">
                     <img src="./assets/temp-humidity.svg" alt="ícone de Umidade">
                     <div class="info">
                         <p>Umidade</p>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="stats">
+                <div class="stats" id="stats-rainy">
                     <img src="./assets/temp-rainy.svg" alt="ícone de chuva">
                     <div class="info">
                         <p>Chuva</p>
@@ -132,9 +132,9 @@
             </div>
 
             <div class="time">
-                <time class="sunrise"></time>
+                <time class="sunrise">00:00</time>
 
-                <time class="sunset"></time>
+                <time class="sunset">00:00</time>
             </div>
         </section>  
         
