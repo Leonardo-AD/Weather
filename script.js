@@ -25,30 +25,6 @@
 } from './export.js'
 
 
-// Getting current hours and minutes
-let getTimeNow = new Date()
-
-if(getTimeNow.getMinutes() < 10){
-    timeNow.innerHTML = `${getTimeNow.getHours()}:0${getTimeNow.getMinutes()}`
-}
-else{
-    timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
-}
-
-setInterval(() => {
-
-    let getTimeNow = new Date()
-
-    if(getTimeNow.getMinutes() < 10){
-        timeNow.innerHTML = `${getTimeNow.getHours()}:0${getTimeNow.getMinutes()}`
-    }
-    else{
-        timeNow.innerHTML = `${getTimeNow.getHours()}:${getTimeNow.getMinutes()}`
-    }
-
-}, 5000)
-
-
 // Getting click to search
 searchButton.addEventListener('click', () => {
     const city = document.querySelector('#search-input').value
@@ -128,16 +104,18 @@ searchButton.addEventListener('click', () => {
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
 
 
-        // Adding sunrise and sunset times
+        // Adding local time, sunrise and sunset
+        let getDT = json.dt
         let getTimezone = json.timezone
         let getSunrise = json.sys.sunrise
         let getSunset =  json.sys.sunset
         
+        timeNow.innerHTML = moment.utc(getDT, 'X').add(getTimezone, 'seconds').format('HH:mm')
         sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
         sunset.innerHTML = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
 
         
-        // Air quality section
+        // Adding data in the air quality section
         function airQuality(){
             const lat = json.coord.lat
             const lon = json.coord.lon

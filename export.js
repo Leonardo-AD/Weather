@@ -49,7 +49,6 @@ export const timeNow = document.querySelector('.now')
 
 
 // calculate the circle of sun with timeNow
-// alter hour, show hour from the city of input
 // clear input value after search
 // hidden values before get api results
 //input:-internal-autofill-selected change it
