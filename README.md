@@ -18,7 +18,7 @@
 
 <p>Mobile version</p>
 
-<img src="./assets/mobile.png"/>
+<img src="./assets/mobile.png" height="900"/>
 
 ## Prototype
 
