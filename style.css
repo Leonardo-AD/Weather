@@ -394,7 +394,7 @@ h4.title {
 
 @media (max-width: 390px) {
     main {
-        background: #c7c4ff;
+        background: url('./assets/background.jpg') no-repeat center/cover;
         padding: 6.4rem 0;
     }
 
@@ -471,7 +471,7 @@ h4.title {
 
 @media (max-width: 420px) {
     main {
-        background: #c7c4ff;
+        background: url('./assets/background.jpg') no-repeat center/cover;
         padding: 6.4rem 0;
     }
 
@@ -539,7 +539,7 @@ h4.title {
 
 @media (max-width: 600px) {
     main {
-        background: #c7c4ff;
+        background: url('./assets/background.jpg') no-repeat center/cover;
         padding: 6.4rem 0;
     }
 
