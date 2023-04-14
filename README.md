@@ -1,10 +1,13 @@
 <h1 align='center'>Weather</h1>
 
-<p>A Weather application challenge of Rocketseat. In this app I am using HTML and CSS.</p>
+<p>A Weather application challenge of Rocketseat. In this app I am using HTML, CSS, JavaScript, Sweet Alert and OpenWeather API.</p>
 
 ## Features Developed
 
-- [x] Manipulation of the circle when we change the value
+- [x] Search a city and get weather informations
+- [x] Wind, humidity and rain
+- [x] Air quality conditions
+- [x] Local time, sunrise and sunset
 - [x] Responsivity
 
 ## Screenshots
@@ -27,6 +30,7 @@ You can access the Rocketseat prototype by clicking the button below.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Figma](https://img.shields.io/badge/FIGMA-2A2141?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Services Used
