@@ -1,11 +1,12 @@
  import {
     searchButton, 
     selectedCity, 
-    weatherTemperature, 
+    weatherTemperature,
+    weatherStatusIcon,
+    weatherStatusInfo,
     windSpeed, 
     humidity,
     APIKey,
-    background,
     maxTemp,
     minTemp,
     rainStats,
@@ -55,64 +56,55 @@ searchButton.addEventListener('click', () => {
 
         switch (json.weather[0].main) { 
             case 'Clear':
-                // background.style.backgroundImage = 'url(./assets/weather-sunny.png)'
                 rainStats.innerHTML = `0 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg" 
                 break;
 
             case 'Rain':
-                // background.style.backgroundImage = 'url(./assets/weather-rainy.png)'
                 rainStats.innerHTML = `60 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg"
                 break;
             
             case 'Snow':
-                // background.style.backgroundImage = 'url(./assets/weather-snow.png)'
                 rainStats.innerHTML = `0 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg"
                 break;
             
             case 'Storm':
-                // background.style.backgroundImage = 'url(./assets/weather-storm.png)'
                 rainStats.innerHTML = `50 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg"
                 break;
 
             case 'Clouds':
-                // background.style.backgroundImage = 'url(./assets/weather-partly-cloudy.png)'
                 rainStats.innerHTML = `5 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg"
                 break;
                
             case 'Haze':
-                // background.style.backgroundImage = 'url(./assets/weather-cloudy.png)'
                 rainStats.innerHTML = `10 <span>%</span>`
-                locationIcon.src = "./assets/pin.svg"
                 break; 
-
-            default:
-                break;
+                
+                default:
+                    break;
         }
-
-        
+                
+                
         // Adding data in the temperature section
         weatherTemperature.innerHTML = `${parseInt(json.main.temp)}`
-        humidity.innerHTML = `${json.main.humidity} <span>%</span>`
-        windSpeed.innerHTML = `${parseInt(json.wind.speed)} <span>km/h</span>`
-        selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
-        maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
-        minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
+        locationIcon.src             = "./assets/pin.svg"
+        weatherStatusIcon.src        = `https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
+        weatherStatusInfo.innerHTML  = json.weather[0].description
+        humidity.innerHTML           = `${json.main.humidity} <span>%</span>`
+        windSpeed.innerHTML          = `${parseInt(json.wind.speed)} <span>km/h</span>`
+        selectedCity.innerHTML       = `${json.name}, ${json.sys.country}`
+        maxTemp.innerHTML            = `${parseInt(json.main.temp_max)}°`
+        minTemp.innerHTML            = `${parseInt(json.main.temp_min)}°`
 
 
         // Adding local time, sunrise and sunset
-        let getDT = json.dt
+        let getDT       = json.dt
         let getTimezone = json.timezone
-        let getSunrise = json.sys.sunrise
-        let getSunset =  json.sys.sunset
+        let getSunrise  = json.sys.sunrise
+        let getSunset   =  json.sys.sunset
         
         timeNow.innerHTML = moment.utc(getDT, 'X').add(getTimezone, 'seconds').format('HH:mm')
         sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
-        sunset.innerHTML = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
+        sunset.innerHTML  = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
 
         
         // Adding data in the air quality section
@@ -150,13 +142,12 @@ searchButton.addEventListener('click', () => {
                 }
 
                 pm2_5.innerHTML = json.list[0].components.pm2_5.toFixed(0)
-                pm10.innerHTML = json.list[0].components.pm10.toFixed(0)
-                so2.innerHTML = json.list[0].components.so2.toFixed(0)
-                no2.innerHTML = json.list[0].components.no2.toFixed(0)
-                o3.innerHTML = json.list[0].components.o3.toFixed(0)
-                co.innerHTML = json.list[0].components.co.toFixed(0)
+                pm10.innerHTML  = json.list[0].components.pm10.toFixed(0)
+                so2.innerHTML   = json.list[0].components.so2.toFixed(0)
+                no2.innerHTML   = json.list[0].components.no2.toFixed(0)
+                o3.innerHTML    = json.list[0].components.o3.toFixed(0)
+                co.innerHTML    = json.list[0].components.co.toFixed(0)
                 
-                console.log(json, "aqui")
             })
 
         }
