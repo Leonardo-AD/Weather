@@ -79,8 +79,8 @@ searchButton.addEventListener('click', () => {
                 rainStats.innerHTML = `10 <span>%</span>`
                 break; 
                 
-                default:
-                    break;
+            default:
+                break;
         }
                 
                 

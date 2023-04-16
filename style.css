@@ -64,29 +64,19 @@ section {
 
 .search input:focus {
     animation: width-animation-in .5s ease-in;
-    max-width: 32rem;
+    max-width: 31rem;
 }
 
 @keyframes width-animation-in {
-    from { 
-       max-width: 12.5rem;
-    }
+    from { max-width: 12.5rem; }
     
-    to {
-        max-width: 32rem;
-    }
-
+    to { max-width: 31rem; }
 }
 
 @keyframes width-animation-out {
-    from { 
-       max-width: 32rem;
-    }
+    from { max-width: 31rem; }
     
-    to {
-        max-width: 12.5rem;
-    }
-
+    to { max-width: 12.5rem; }
 }
 
 .search button {
@@ -120,7 +110,7 @@ section {
 
 .location {
     justify-content: space-between;
-    padding: 3.2rem 2rem 0;
+    padding: 3.2rem 1.6rem 0;
 
     display: flex;
     align-items: center;
@@ -130,10 +120,11 @@ section {
 .selected-city {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .selected-city strong {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--text-soft-color);
 }
 
@@ -157,6 +148,25 @@ section {
 
 .temperature-info .number{
     text-align: center;
+}
+
+.weather-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-status img {
+    width: 9rem;
+    margin: 0 -.5rem 0 0;
+}
+
+.weather-status p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text-soft-color);
+    text-align: center;
+    padding: 0 1rem 0 0;
 }
 
 #weather-status-info::first-letter {

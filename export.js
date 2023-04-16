@@ -53,12 +53,13 @@ export const timeNow = document.querySelector('.now')
 // https://openweathermap.org/weather-conditions -- get icon of weather
 // Improve the answer on switch and get the real rain probability
 // calculate the circle of sun with timeNow
+
 // clear input value after search
 // hidden values before get api results
 //input:-internal-autofill-selected change it
 
-
-
+// Map of temperature
+// Get user location
 
 
 
@@ -69,8 +70,6 @@ export const timeNow = document.querySelector('.now')
 
 // https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
 // Show the condition bellow the min and max temperature - clouds -> nuvens...
-// Get user location
-// Hidden fields before a search
 
 // https://openweathermap.org/api/air-pollution
 
