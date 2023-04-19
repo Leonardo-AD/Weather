@@ -24,6 +24,30 @@
     timeNow
     
 } from './export.js'
+ 
+
+// Getting user position 
+// function getUserLocation(){
+
+//     let userLat  
+//     let userLon 
+
+//     navigator.geolocation.getCurrentPosition( (position) => {
+//         userLat = position.coords.latitude
+//         userLon = position.coords.longitude
+
+//         console.log(position.coords.latitude, position.coords.longitude)
+        
+//         fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${userLat}&lon=${userLon}&appid=${APIKey}&lang=pt_br`)
+//         .then(res => res.json())
+//         .then(json => {
+//             document.querySelector('#search-input').value = "Olinda"
+//             console.log(json)
+//         })
+//     })
+// }
+
+// getUserLocation()
 
 
 // Getting click to search
@@ -100,7 +124,7 @@ searchButton.addEventListener('click', () => {
         let getDT       = json.dt
         let getTimezone = json.timezone
         let getSunrise  = json.sys.sunrise
-        let getSunset   =  json.sys.sunset
+        let getSunset   = json.sys.sunset
         
         timeNow.innerHTML = moment.utc(getDT, 'X').add(getTimezone, 'seconds').format('HH:mm')
         sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
@@ -154,5 +178,4 @@ searchButton.addEventListener('click', () => {
 
         airQuality()
     })
-    
 })

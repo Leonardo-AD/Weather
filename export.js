@@ -60,6 +60,7 @@ export const timeNow = document.querySelector('.now')
 
 // Map of temperature
 // Get user location
+// Add a map of rain?
 
 
 
