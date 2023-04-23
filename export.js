@@ -59,18 +59,10 @@ export const timeNow = document.querySelector('.now')
 //input:-internal-autofill-selected change it
 
 // Map of temperature
-// Get user location
 // Add a map of rain?
 
 
-
-
-
-
-
-
-// https://www.youtube.com/watch?v=VS8EBgPwsSU min 40:40 name condition and icons to day and night
-// Show the condition bellow the min and max temperature - clouds -> nuvens...
+// How to get any hour of a city by city name? Using a free API or pure JavaScript?
 
 // https://openweathermap.org/api/air-pollution
 
