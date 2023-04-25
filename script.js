@@ -1,30 +1,16 @@
  import {
-    searchButton, 
-    selectedCity, 
-    weatherTemperature,
-    weatherStatusIcon,
-    weatherStatusInfo,
-    windSpeed, 
-    humidity,
-    APIKey,
-    maxTemp,
-    minTemp,
-    rainStats,
-    locationIcon,
-    qualityStatus,
-    qualityStatusRate,
-    pm2_5,
-    pm10,
-    so2,
-    no2,
-    o3,
-    co,
-    sunrise,
-    sunset,
-    timeNow
-    
+
+    searchButton, selectedCity, weatherTemperature, weatherStatusIcon, weatherStatusInfo,
+    windSpeed, humidity, APIKey, maxTemp, minTemp, rainStats,
+    locationIcon, qualityStatus, qualityStatusRate,
+    pm2_5, pm10, so2, no2, o3, co, 
+    sunrise, sunset, timeNow,
+    day_1, day_2, day_3, day_4, day_5,
+    maxTempDay1, maxTempDay2, maxTempDay3, maxTempDay4, maxTempDay5,
+    minTempDay1, minTempDay2, minTempDay3, minTempDay4, minTempDay5
+
 } from './export.js'
- 
+
 
 // Getting user position 
 function getUserLocation(){
@@ -173,7 +159,25 @@ searchButton.addEventListener('click', () => {
             })
 
         }
-
+        
         airQuality()
+        
+        
+        // Adding data in the week weather section
+        let lat = json.coord.lat
+        let lon = json.coord.lon
+        
+        function weekWeather(){
+
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=metric&lang=pt-br`)
+            .then(res => res.json())    
+            .then(json => {
+                console.log(json)
+                console.log(json.list[4].main.temp_max.toFixed(0))
+            })
+        }
+
+        weekWeather()
+        
     })
 })
