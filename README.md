@@ -5,6 +5,7 @@
 ## Features Developed
 
 - [x] Search a city and get weather informations
+- [x] Getting the user's location
 - [x] Wind speed, humidity and rain
 - [x] Air quality conditions
 - [x] Local time, sunrise and sunset
