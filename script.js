@@ -159,7 +159,7 @@ searchButton.addEventListener('click', () => {
             })
 
         }
-        
+
         airQuality()
         
         
