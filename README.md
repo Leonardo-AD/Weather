@@ -1,6 +1,6 @@
 <h1 align='center'>Weather</h1>
 
-<p>A Weather application challenge of Rocketseat. In this app I am using HTML, CSS, JavaScript, Sweet Alert and OpenWeather API.</p>
+<p>A Weather application. In this app I am using HTML, CSS, JavaScript, Sweet Alert and OpenWeather API.</p>
 
 ## Features Developed
 
