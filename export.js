@@ -16,7 +16,6 @@ export const humidity           = document.querySelector('#humidity')
 export const rainStats          = document.querySelector('#rain')
 
 
-
 // Air quality section
 export const qualityStatus     = document.querySelector('.quality-status')
 export const qualityStatusRate = document.querySelector('.quality-status-rate')

@@ -11,8 +11,11 @@
 
 } from './export.js'
 
+import { temperatureSection } from './temperatureSection.js'
+import { airQualitySection } from './airQualitySection.js'
 
-// Getting user position 
+
+// Getting user location 
 function getUserLocation(){
 
     let userLat  
@@ -30,14 +33,14 @@ function getUserLocation(){
         })
     })
 }
-
+// Calling the function to get user location
 getUserLocation()
 
 
 // Getting click to search
 searchButton.addEventListener('click', () => {
-    const city = document.querySelector('#search-input').value
-
+    let city = document.querySelector('#search-input').value
+    
     if(!city){
         
         Swal.fire({
@@ -90,18 +93,8 @@ searchButton.addEventListener('click', () => {
             default:
                 break;
         }
-                
-                
-        // Adding data in the temperature section
-        weatherTemperature.innerHTML = `${parseInt(json.main.temp)}`
-        locationIcon.src             = "./assets/pin.svg"
-        weatherStatusIcon.src        = `https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
-        weatherStatusInfo.innerHTML  = json.weather[0].description
-        humidity.innerHTML           = `${json.main.humidity} <span>%</span>`
-        windSpeed.innerHTML          = `${parseInt(json.wind.speed)} <span>km/h</span>`
-        selectedCity.innerHTML       = `${json.name}, ${json.sys.country}`
-        maxTemp.innerHTML            = `${parseInt(json.main.temp_max)}°`
-        minTemp.innerHTML            = `${parseInt(json.main.temp_min)}°`
+
+        temperatureSection()
 
 
         // Adding local time, sunrise and sunset
@@ -109,58 +102,15 @@ searchButton.addEventListener('click', () => {
         let getTimezone = json.timezone
         let getSunrise  = json.sys.sunrise
         let getSunset   = json.sys.sunset
+        let latitude    = json.coord.lat
+        let longitude   = json.coord.lon
         
         timeNow.innerHTML = moment.utc(getDT, 'X').add(getTimezone, 'seconds').format('HH:mm')
         sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
         sunset.innerHTML  = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
 
         
-        // Adding data in the air quality section
-        function airQuality(){
-            const lat = json.coord.lat
-            const lon = json.coord.lon
-
-            fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
-            .then(res => res.json())
-            .then(json => {
-
-                if(json.list[0].main.aqi == 0 || json.list[0].main.aqi <= 40){
-                    qualityStatus.innerHTML = "Boa"
-                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
-                }
-
-                else if(json.list[0].main.aqi >= 41 || json.list[0].main.aqi <= 80){
-                    qualityStatus.innerHTML = "Moderada"
-                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
-                }
-
-                else if(json.list[0].main.aqi >= 81 || json.list[0].main.aqi <= 120){
-                    qualityStatus.innerHTML = "Ruim"
-                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
-                }
-
-                else if(json.list[0].main.aqi >= 121 || json.list[0].main.aqi <= 200){
-                    qualityStatus.innerHTML = "Muito ruim"
-                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
-                }
-                
-                else{
-                    qualityStatus.innerHTML = "Péssima"
-                    qualityStatusRate.innerHTML = `${json.list[0].main.aqi}`
-                }
-
-                pm2_5.innerHTML = json.list[0].components.pm2_5.toFixed(0)
-                pm10.innerHTML  = json.list[0].components.pm10.toFixed(0)
-                so2.innerHTML   = json.list[0].components.so2.toFixed(0)
-                no2.innerHTML   = json.list[0].components.no2.toFixed(0)
-                o3.innerHTML    = json.list[0].components.o3.toFixed(0)
-                co.innerHTML    = json.list[0].components.co.toFixed(0)
-                
-            })
-
-        }
-
-        airQuality()
+        airQualitySection(latitude, longitude)
         
         
         // Adding data in the week weather section
