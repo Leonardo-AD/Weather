@@ -68,9 +68,11 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
         locationIcon.src = "./assets/pin.svg"
         weatherStatusIcon.src = `https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
         weatherStatusInfo.innerHTML = json.weather[0].description
+
         humidity.innerHTML = `${json.main.humidity} <span>%</span>`
         windSpeed.innerHTML = `${parseInt(json.wind.speed)} <span>km/h</span>`
         selectedCity.innerHTML = `${json.name}, ${json.sys.country}`
+        
         maxTemp.innerHTML = `${parseInt(json.main.temp_max)}°`
         minTemp.innerHTML = `${parseInt(json.main.temp_min)}°`
 

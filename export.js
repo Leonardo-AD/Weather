@@ -58,9 +58,13 @@ export const minTempDay5 = document.querySelector('#min_temp-day_5')
 // format day of the week
 // https://pt.stackoverflow.com/questions/128379/formatar-data-javascript-achar-dia-da-semana
 
-// https://openweathermap.org/weather-conditions -- get icon of weather
-// Improve the answer on switch and get the real rain probability
+// https://openweathermap.org/weather-conditions -- get weather icon with different sizes
+ 
+// Improve the answer on switch and get the real rain probability -> example: propability in 3h (0.2mm x 100%) = 20%
+// https://www.monolitonimbus.com.br/o-que-e-a-probabilidade-de-chuva/#:~:text=Por%20exemplo%2C%20se%20o%20meteorologista,8%20%3D%200%2C4).
+
 // calculate the circle of sun with timeNow
+// wind degree to set the icon in the wind direction -> https://uni.edu/storm/Wind%20Direction%20slide.pdf
 
 // hidden values before get api results
 //input:-internal-autofill-selected change it

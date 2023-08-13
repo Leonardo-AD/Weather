@@ -1,38 +1,15 @@
  import {
 
-    searchButton, selectedCity, weatherTemperature, weatherStatusIcon, weatherStatusInfo,
-    windSpeed, humidity, APIKey, maxTemp, minTemp, rainStats,
-    locationIcon, qualityStatus, qualityStatusRate,
-    pm2_5, pm10, so2, no2, o3, co, 
+    searchButton, APIKey, rainStats, 
     sunrise, sunset, timeNow,
-    day_1, day_2, day_3, day_4, day_5,
-    maxTempDay1, maxTempDay2, maxTempDay3, maxTempDay4, maxTempDay5,
-    minTempDay1, minTempDay2, minTempDay3, minTempDay4, minTempDay5
 
 } from './export.js'
 
+import { getUserLocation } from './getUserLocation.js'
 import { temperatureSection } from './temperatureSection.js'
 import { airQualitySection } from './airQualitySection.js'
 
 
-// Getting user location 
-function getUserLocation(){
-
-    let userLat  
-    let userLon 
-
-    navigator.geolocation.getCurrentPosition( (position) => {
-        userLat = position.coords.latitude
-        userLon = position.coords.longitude
-        
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${userLat}&lon=${userLon}&appid=${APIKey}&lang=pt_br`)
-        .then(res => res.json())
-        .then(json => {
-            document.querySelector('#search-input').value = json.name
-            searchButton.click()
-        })
-    })
-}
 // Calling the function to get user location
 getUserLocation()
 
@@ -94,6 +71,7 @@ searchButton.addEventListener('click', () => {
                 break;
         }
 
+        //Calling the function to get temperature, humidity, wind speed and rain probability
         temperatureSection()
 
 
@@ -109,7 +87,8 @@ searchButton.addEventListener('click', () => {
         sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm') 
         sunset.innerHTML  = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
 
-        
+
+        //Calling the function to get the air quality
         airQualitySection(latitude, longitude)
         
         
