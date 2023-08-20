@@ -42,35 +42,6 @@ searchButton.addEventListener('click', () => {
               })
         }
 
-        switch (json.weather[0].main) { 
-            case 'Clear':
-                rainStats.innerHTML = `0 <span>%</span>`
-                break;
-
-            case 'Rain':
-                rainStats.innerHTML = `60 <span>%</span>`
-                break;
-            
-            case 'Snow':
-                rainStats.innerHTML = `0 <span>%</span>`
-                break;
-            
-            case 'Storm':
-                rainStats.innerHTML = `50 <span>%</span>`
-                break;
-
-            case 'Clouds':
-                rainStats.innerHTML = `5 <span>%</span>`
-                break;
-               
-            case 'Haze':
-                rainStats.innerHTML = `10 <span>%</span>`
-                break; 
-                
-            default:
-                break;
-        }
-
         //Calling the function to get temperature, humidity, wind speed and rain probability
         temperatureSection()
 
@@ -103,6 +74,10 @@ searchButton.addEventListener('click', () => {
             .then(json => {
                 console.log(json)
                 console.log(json.list[4].main.temp_max.toFixed(0))
+
+                // example of propability in 3h (0.2mm x 100%) = 20%
+                let pop = json.list[0].pop * 100
+                rainStats.innerHTML = `${pop.toFixed(0)} <span>%</span>`
             })
         }
 

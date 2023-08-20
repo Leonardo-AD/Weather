@@ -106,22 +106,10 @@ section {
 }
 
 .temperature-now {
-    /* background: url('./assets/weather-cloudy.jpg'); */
     position: relative;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
 }
-
-/* .temperature-now::before {
-    content: "";
-    width: 17.6rem;
-    height: 17.6rem;
-
-    background: url('./assets/cloud.svg') no-repeat;
-    position: absolute;
-    top: -5.6rem;
-    left: -5.6rem;
-} */
 
 .location {
     justify-content: space-between;
@@ -236,8 +224,9 @@ section {
     font-size: 1.8rem;
     display: flex;
     align-items: baseline;
-    gap: .4rem;
+    gap: .4rem
 }
+
 
 /* Air quality section */
 .air-quality {
