@@ -30,9 +30,10 @@ export const co                = document.querySelector('#co')
 
 
 // Sunrise and sunset section
-export const sunrise = document.querySelector('.sunrise')
-export const sunset  = document.querySelector('.sunset')
-export const timeNow = document.querySelector('.now')
+export const circlePosition = document.querySelector('.sun-chart') 
+export const sunrise        = document.querySelector('.sunrise')
+export const sunset         = document.querySelector('.sunset')
+export const timeNow        = document.querySelector('.now')
 
 
 // Week weather section
@@ -58,18 +59,6 @@ export const minTempDay5 = document.querySelector('#min_temp-day_5')
 // format day of the week
 // https://pt.stackoverflow.com/questions/128379/formatar-data-javascript-achar-dia-da-semana
 
-// https://openweathermap.org/weather-conditions -- get weather icon with different sizes
- 
-// calculate the circle of sun with timeNow
 // wind degree to set the icon in the wind direction -> https://uni.edu/storm/Wind%20Direction%20slide.pdf
 
-// hidden values before get api results
-//input:-internal-autofill-selected change it
-
-// Map of temperature
-// Add a map of rain?
-// How to get any hour of a city by city name? Using a free API or pure JavaScript?
-
-
-// Previsões durante dias
-// https://openweathermap.org/widgets-constructor
+// --- reduce the API calls (export the data by the first call to other functions outside of the script.js)
