@@ -60,5 +60,3 @@ export const minTempDay5 = document.querySelector('#min_temp-day_5')
 // https://pt.stackoverflow.com/questions/128379/formatar-data-javascript-achar-dia-da-semana
 
 // wind degree to set the icon in the wind direction -> https://uni.edu/storm/Wind%20Direction%20slide.pdf
-
-// --- reduce the API calls (export the data by the first call to other functions outside of the script.js)

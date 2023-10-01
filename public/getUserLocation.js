@@ -1,10 +1,7 @@
 // Getting user location
-import { APIKey, searchButton } from './export.js'
+export function getUserLocation(APIKey, searchButton){
 
-export function getUserLocation(){
-
-    let userLat  
-    let userLon
+    let userLat, userLon  
 
     navigator.geolocation.getCurrentPosition( (position) => {
         userLat = position.coords.latitude

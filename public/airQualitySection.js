@@ -1,16 +1,13 @@
 import {
 
-    APIKey, qualityStatus, qualityStatusRate,
+    qualityStatus, qualityStatusRate,
     pm2_5, pm10, so2, no2, o3, co
 
-} from './export.js'
+} from '../export.js'
 
-export function airQualitySection(latitude, longitude) {
+export function airQualitySection(latitude, longitude, APIKey) {
 
-    const lat = latitude
-    const lon = longitude
-
-    fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${APIKey}&lang=pt_br`)
+    fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())
     .then(json => {
 
@@ -46,7 +43,5 @@ export function airQualitySection(latitude, longitude) {
         no2.innerHTML   = json.list[0].components.no2.toFixed(0)
         o3.innerHTML    = json.list[0].components.o3.toFixed(0)
         co.innerHTML    = json.list[0].components.co.toFixed(0)
-
     })
-
 }
