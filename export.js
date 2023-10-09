@@ -43,20 +43,20 @@ export const day_3 = document.querySelector('#day_3')
 export const day_4 = document.querySelector('#day_4')
 export const day_5 = document.querySelector('#day_5')
 
-export const maxTempDay1 = document.querySelector('#max_temp-day_1')
-export const maxTempDay2 = document.querySelector('#max_temp-day_2')
-export const maxTempDay3 = document.querySelector('#max_temp-day_3')
-export const maxTempDay4 = document.querySelector('#max_temp-day_4')
-export const maxTempDay5 = document.querySelector('#max_temp-day_5')
+export const day1_status = document.querySelector('#day_1_status')
+export const day2_status = document.querySelector('#day_2_status')
+export const day3_status = document.querySelector('#day_3_status')
+export const day4_status = document.querySelector('#day_4_status')
+export const day5_status = document.querySelector('#day_5_status')
+
+export const TempDay1 = document.querySelector('#temp-day_1')
+export const TempDay2 = document.querySelector('#max_temp-day_2')
+export const TempDay3 = document.querySelector('#max_temp-day_3')
+export const TempDay4 = document.querySelector('#max_temp-day_4')
+export const TempDay5 = document.querySelector('#max_temp-day_5')
 
 export const minTempDay1 = document.querySelector('#min_temp-day_1')
 export const minTempDay2 = document.querySelector('#min_temp-day_2')
 export const minTempDay3 = document.querySelector('#min_temp-day_3')
 export const minTempDay4 = document.querySelector('#min_temp-day_4')
 export const minTempDay5 = document.querySelector('#min_temp-day_5')
-
-
-// format day of the week
-// https://pt.stackoverflow.com/questions/128379/formatar-data-javascript-achar-dia-da-semana
-
-// wind degree to set the icon in the wind direction -> https://uni.edu/storm/Wind%20Direction%20slide.pdf

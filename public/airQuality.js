@@ -5,7 +5,7 @@ import {
 
 } from '../export.js'
 
-export function airQualitySection(latitude, longitude, APIKey) {
+export function airQuality(latitude, longitude, APIKey) {
 
     fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())

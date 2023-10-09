@@ -1,14 +1,6 @@
- import {
+import { searchButton, APIKey, rainStats, sunrise, sunset, timeNow, circlePosition } from './export.js'
 
-    searchButton, APIKey, rainStats, 
-    sunrise, sunset, timeNow, circlePosition
-
-} from './export.js'
-
-import { getUserLocation } from './public/getUserLocation.js'
-import { temperatureSection } from './public/temperatureSection.js'
-import { airQualitySection } from './public/airQualitySection.js'
-import { weekWeather } from './public/weekWeather.js'
+import { getUserLocation, temperature, airQuality, weekWeather, sunPosition} from './public/index.js'
 
 
 // Calling the function to get user location
@@ -17,7 +9,7 @@ getUserLocation(APIKey, searchButton)
 
 // Getting click to search
 searchButton.addEventListener('click', () => {
-    let city = document.querySelector('#search-input').value
+    const city = document.querySelector('#search-input').value
     
     if(!city){
         
@@ -43,66 +35,25 @@ searchButton.addEventListener('click', () => {
               })
         }
 
+        // Getting DT, timezone, sunrise, sunset, latitude and longitude
+        const getDT       = json.dt
+        const getTimezone = json.timezone
+        const getSunrise  = json.sys.sunrise
+        const getSunset   = json.sys.sunset
+        const latitude    = json.coord.lat
+        const longitude   = json.coord.lon
+        
+        
         // Calling the function to get temperature, humidity, wind speed and rain probability
-        temperatureSection(city, APIKey)
-
-
-        // Adding local time, sunrise and sunset
-        let getDT       = json.dt
-        let getTimezone = json.timezone
-        let getSunrise  = json.sys.sunrise
-        let getSunset   = json.sys.sunset
-        let latitude    = json.coord.lat
-        let longitude   = json.coord.lon
-
-        timeNow.innerHTML = moment.utc(getDT, 'X').add(getTimezone, 'seconds').format('HH:mm')
-        sunrise.innerHTML = moment.utc(getSunrise, 'X').add(getTimezone, 'seconds').format('HH:mm')
-        sunset.innerHTML  = moment.utc(getSunset, 'X').add(getTimezone, 'seconds').format('HH:mm')
+        temperature(city, APIKey)
         
         
-        // This section below calculate the position of the circle that represents the position of the sun on the sky
-        // After some hours of Physic and geolocation (azimute and Zenith concepts) I finish release this mathematical formula
-        
-        // sunPosition = (timeNowValue - sunriseValue) * (100 / hoursGap)
-        // where:
-        // timeNowValue = time now value
-        // sunriseValue = time of the sunrise
-        // 100 = value of the position-x of the yellow circle thats represents the sun
-        // hoursGap = the value of sun light between the sunset and sunrise -> (sunsetValue - sunriseValue)
-
-        // to get sunriseValue, sunsetValue and timeNowValue I ever used the function toString(10) this 10 references the decimal numbers
-        // with toString(10) we set the string that has a number in number and now we have the value. 
-        // without that function the return was NaN :(
-            
-        // I did replace the ':' to '.', just to improve the precision of the number and get the complete values
-        // I dis use parseFloat for the value in hoursGap
-        // even using this formula isn't really exactly the real position of the sun in the sky, but is the best that i can done at the moment
-
-        // with results i did apply on the circlePosition and this references the value between 0 - 100 of the x position
-        // if the x position value equal 50 -> the sun are rigth on the midle of the skies
-        // 0 means that the sun dosen't have rise yeat and 100 means the sun has set
-        // if the sunPosition > 100 his value will be set as 100, once that the sunPosition biger than 100 makes the circle continues his rotation and i don't want it
-
-        let sunriseValue = sunrise.innerHTML.toString(10).replace(':','.')
-        let sunsetValue = sunset.innerHTML.toString(10).replace(':','.')
-        let timeNowValue = timeNow.innerHTML.toString(10).replace(':','.')
-
-        let hoursGap = parseFloat(sunsetValue) - parseFloat(sunriseValue)
-        let sunPosition = (timeNowValue - sunriseValue) * (100 / hoursGap)
-        
-        if(timeNowValue > sunriseValue){
-
-            if(sunPosition > 0 && sunPosition <= 100){                
-                circlePosition.style.cssText = `--pos-x: ${sunPosition.toFixed(2)}`
-            }
-            else{
-                circlePosition.style.cssText = `--pos-x: ${0}`
-            }
-        }
+        // Calling the function to set the sun position
+        sunPosition(sunrise, sunset, timeNow, circlePosition, getDT, getTimezone, getSunrise, getSunset)
 
 
         // Calling the function to get the air quality
-        airQualitySection(latitude, longitude, APIKey)
+        airQuality(latitude, longitude, APIKey)
         
         
         // Adding data in the week weather section

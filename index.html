@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="./script.js" type="module" defer></script>
+    <!-- <script src="moment-timezone-with-data.js"></script> -->
     <!-- <script src="https://momentjs.com/downloads/moment.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
 
@@ -147,32 +148,32 @@
         <section class="week-weather">
             <div class="day">
                 <h4 class="title" id="day_1">Clima</h4>
-                <img src="./assets/cloudy.svg" alt="ícone de nuvem">
-                <p class="max-min" id="max_temp-day_1">21° <span id="min_temp-day_1">16°</span></p>
+                <img onError="this.onerror=null;this.src='./assets/cloudy.svg';" src="" id="day_1_status" alt="ícone do clima">
+                <p class="max-min" id="temp-day_1">0° <span>0°</span></p>
             </div>
 
             <div class="day">
                 <h4 class="title" id="day_2">Clima</h4>
-                <img src="./assets/sunny.svg" alt="ícone de sol">
-                <p class="max-min" id="max_temp-day_2">28° <span id="min_temp-day_2">20°</span></p>
+                <img onError="this.onerror=null;this.src='./assets/cloudy.svg';" src="" id="day_2_status" alt="ícone do clima">
+                <p class="max-min" id="max_temp-day_2">0° <span id="min_temp-day_2">0°</span></p>
             </div>
 
             <div class="day">
                 <h4 class="title" id="day_3">Clima</h4>
-                <img src="./assets/rainy.svg" alt="ícone de chuva">
-                <p class="max-min" id="max_temp-day_3">25° <span id="min_temp-day_3">21°</span></p>
+                <img onError="this.onerror=null;this.src='./assets/cloudy.svg';" src="" id="day_3_status" alt="ícone do clima">
+                <p class="max-min" id="max_temp-day_3">0° <span id="min_temp-day_3">0°</span></p>
             </div>
 
             <div class="day">
                 <h4 class="title" id="day_4">Clima</h4>
-                <img src="./assets/storm.svg" alt="ícone de tempestade">
-                <p class="max-min" id="max_temp-day_4">20° <span id="min_temp-day_4">14°</span></p>
+                <img onError="this.onerror=null;this.src='./assets/cloudy.svg';" src="" id="day_4_status" alt="ícone do clima">
+                <p class="max-min" id="max_temp-day_4">0° <span id="min_temp-day_4">0°</span></p>
             </div>
 
             <div class="day">
                 <h4 class="title" id="day_5">Clima</h4>
-                <img src="./assets/partly-cloudy.svg" alt="ícone de céu parcialmente nublado">
-                <p class="max-min" id="max_temp-day_5">24° <span id="min_temp-day_5">18°</span></p>
+                <img onError="this.onerror=null;this.src='./assets/cloudy.svg';" src="" id="day_5_status" alt="ícone do clima">
+                <p class="max-min" id="max_temp-day_5">0° <span id="min_temp-day_5">0°</span></p>
             </div>
         </section>
     </main>

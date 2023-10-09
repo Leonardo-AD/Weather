@@ -5,7 +5,7 @@ import {
 
 } from '../export.js'
 
-export function temperatureSection(city, APIKey) {
+export function temperature(city, APIKey) {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
         .then(res => res.json())

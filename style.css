@@ -376,7 +376,11 @@ time.now {
     flex: 1;
     display: grid;
     justify-items: center;
-    gap: 1.6rem;
+    align-items: center;
+}
+
+.day img {
+    width: 8.5rem;
 }
 
 h4.title {
