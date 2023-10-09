@@ -42,6 +42,7 @@ export function weekWeather(city, rainStats, APIKey){
                     // At the other size of world the icon apears like night even stay day?! 
                     // The value of min and max weather are inverted: (max = min) and (min = max) maybe the idea above resolve it
 
+            
             // this way will stay updated when the API refresh the datas any 3 hours. DOOOOO ITTT NOW!
             // [0] it's the current day, i need get it to reduce the API requests
 
