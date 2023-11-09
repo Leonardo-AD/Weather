@@ -1,14 +1,15 @@
-import { day_1, day_2, day_3, day_4, day_5 } from '../export.js'
-import { day1_status, day2_status, day3_status, day4_status, day5_status } from '../export.js'
-import { TempDay1, TempDay2, TempDay3, TempDay4, TempDay5 } from '../export.js'
+import { 
+    day_1, day_2, day_3, day_4, day_5,
+    day1_status, day2_status, day3_status, day4_status, day5_status,
+    TempDay1, TempDay2, TempDay3, TempDay4, TempDay5
+} from '../export.js'
 
-export function weekWeather(city, rainStats, APIKey){
+export function weekWeather(city, rainStats, APIKey){//receive the json here to reduce the API calls and memory processing
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())    
     .then(json => {
-        console.log(json)
-        console.log(json.list[4].main.temp_max.toFixed(0))
+        // console.log(json)
 
         // example of propability in 3h (0.2mm x 100%) = 20% 
         let pop = json.list[0].pop * 100
@@ -16,7 +17,7 @@ export function weekWeather(city, rainStats, APIKey){
         
 
         // Getting any forecast day and setting the first letter to capital
-        function settingDaysOfWeek(){
+        function setDaysOfWeek(){
             
             moment.locale('pt-br')
 
@@ -35,7 +36,7 @@ export function weekWeather(city, rainStats, APIKey){
         }
 
         
-        function maxTemperature(){
+        function setTemperature(){
             // day 1 = [0-7 or 0-8 check hour to check corretly] array with any of them and get the max and then get the min as well
 
                 // bugs:
@@ -52,6 +53,14 @@ export function weekWeather(city, rainStats, APIKey){
             TempDay3.innerHTML = `${json.list[22].main.temp_max.toFixed(0)}° <span>${json.list[18].main.temp_min.toFixed(0)}°</span>` 
             TempDay4.innerHTML = `${json.list[30].main.temp_max.toFixed(0)}° <span>${json.list[26].main.temp_min.toFixed(0)}°</span>` 
             TempDay5.innerHTML = `${json.list[38].main.temp_max.toFixed(0)}° <span>${json.list[34].main.temp_min.toFixed(0)}°</span>` 
+
+            let test = json.list
+            for(let i = 0; i < test.length; i++){
+                
+                //console.log(`MAX: ${json.list[i].main.temp_max.toFixed(0)} | MIN: ${json.list[i].main.temp_min.toFixed(0)}`)
+                //console.log(`ICON: ${json.list[i].weather[0].icon}`)
+                
+            }
         }
 
 
@@ -64,17 +73,7 @@ export function weekWeather(city, rainStats, APIKey){
         }
 
         setForecastIcon()
-        maxTemperature()
-        settingDaysOfWeek()
-
-
-        // https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png
-
-
-
+        setTemperature()
+        setDaysOfWeek()
     })
 }
-
-// yesterday at 17:43:   city.list[0] -> dt_txt: "2023-10-07 21:00:00" - temp_max: 26.92 - temp_min: 25.8
-// today at ?:
-// if the hour change i can use the forecast request instead weather request

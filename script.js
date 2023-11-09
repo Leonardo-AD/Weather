@@ -24,7 +24,7 @@ searchButton.addEventListener('click', () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())
     .then(json => {
-        
+
         if(json.cod === '404'){
             
             Swal.fire({
@@ -45,7 +45,7 @@ searchButton.addEventListener('click', () => {
         
         
         // Calling the function to get temperature, humidity, wind speed and rain probability
-        temperature(city, APIKey)
+        temperature(json)
         
         
         // Calling the function to set the sun position
