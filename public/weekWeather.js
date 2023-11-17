@@ -16,7 +16,6 @@ export function weekWeather(city, rainStats, APIKey){//receive the json here to 
         rainStats.innerHTML = `${pop.toFixed(0)} <span>%</span>`
         
 
-        // Getting any forecast day and setting the first letter to capital
         function setDaysOfWeek(){
             
             moment.locale('pt-br')
@@ -32,39 +31,26 @@ export function weekWeather(city, rainStats, APIKey){//receive the json here to 
             day_3.innerHTML = gettingDay_3[0].toUpperCase() + gettingDay_3.slice(1).split(' ').shift().split('-').shift()
             day_4.innerHTML = gettingDay_4[0].toUpperCase() + gettingDay_4.slice(1).split(' ').shift().split('-').shift()
             day_5.innerHTML = gettingDay_5[0].toUpperCase() + gettingDay_5.slice(1).split(' ').shift().split('-').shift()
-
         }
 
         
-        function setTemperature(){
-            // day 1 = [0-7 or 0-8 check hour to check corretly] array with any of them and get the max and then get the min as well
-
-                // bugs:
-                    // At the other size of world the icon apears like night even stay day?! 
-                    // The value of min and max weather are inverted: (max = min) and (min = max) maybe the idea above resolve it
-
-            
-            // this way will stay updated when the API refresh the datas any 3 hours. DOOOOO ITTT NOW!
-            // [0] it's the current day, i need get it to reduce the API requests
-
-            //15h temperature > 12h   //03h temperature < 06h  
-            TempDay1.innerHTML = `${json.list[6].main.temp_max.toFixed(0)}° <span>${json.list[2].main.temp_min.toFixed(0)}°</span>` 
-            TempDay2.innerHTML = `${json.list[14].main.temp_max.toFixed(0)}° <span>${json.list[10].main.temp_min.toFixed(0)}°</span>` 
-            TempDay3.innerHTML = `${json.list[22].main.temp_max.toFixed(0)}° <span>${json.list[18].main.temp_min.toFixed(0)}°</span>` 
-            TempDay4.innerHTML = `${json.list[30].main.temp_max.toFixed(0)}° <span>${json.list[26].main.temp_min.toFixed(0)}°</span>` 
-            TempDay5.innerHTML = `${json.list[38].main.temp_max.toFixed(0)}° <span>${json.list[34].main.temp_min.toFixed(0)}°</span>` 
+        function setForecast(){
 
             let test = json.list
+            let minWeekTempValues = []
+            let maxWeekTempValues = []
+
             for(let i = 0; i < test.length; i++){
-                
-                //console.log(`MAX: ${json.list[i].main.temp_max.toFixed(0)} | MIN: ${json.list[i].main.temp_min.toFixed(0)}`)
-                //console.log(`ICON: ${json.list[i].weather[0].icon}`)
-                
+                minWeekTempValues.push(json.list[i].main.temp_max.toFixed(0)) 
+                maxWeekTempValues.push(json.list[i].main.temp_min.toFixed(0))
             }
-        }
 
+            TempDay1.innerHTML = `${ Math.max(...maxWeekTempValues.slice(0, 8)) }°   <span>${ Math.min(...minWeekTempValues.slice(0, 8)) }°</span>` 
+            TempDay2.innerHTML = `${ Math.max(...maxWeekTempValues.slice(8, 16)) }°  <span>${ Math.min(...minWeekTempValues.slice(8, 16)) }°</span>` 
+            TempDay3.innerHTML = `${ Math.max(...maxWeekTempValues.slice(16, 24)) }° <span>${ Math.min(...minWeekTempValues.slice(16, 24)) }°</span>` 
+            TempDay4.innerHTML = `${ Math.max(...maxWeekTempValues.slice(24, 32)) }° <span>${ Math.min(...minWeekTempValues.slice(24, 32)) }°</span>` 
+            TempDay5.innerHTML = `${ Math.max(...maxWeekTempValues.slice(32, 40)) }° <span>${ Math.min(...minWeekTempValues.slice(32, 40)) }°</span>`
 
-        function setForecastIcon(){
             day1_status.src = `https://openweathermap.org/img/wn/${json.list[5].weather[0].icon}@2x.png`
             day2_status.src = `https://openweathermap.org/img/wn/${json.list[13].weather[0].icon}@2x.png`
             day3_status.src = `https://openweathermap.org/img/wn/${json.list[21].weather[0].icon}@2x.png`
@@ -72,8 +58,7 @@ export function weekWeather(city, rainStats, APIKey){//receive the json here to 
             day5_status.src = `https://openweathermap.org/img/wn/${json.list[37].weather[0].icon}@2x.png`
         }
 
-        setForecastIcon()
-        setTemperature()
         setDaysOfWeek()
+        setForecast()
     })
 }
