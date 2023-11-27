@@ -1,6 +1,6 @@
 <h1 align='center'>Weather</h1>
 
-<p>A Weather application. In this app I am using HTML, CSS, JavaScript, Sweet Alert and OpenWeather API.</p>
+<p>A Weather application. In this app I am using HTML, CSS, JavaScript, SweetAlert 2, Moment.js and OpenWeather.</p>
 
 ## Features Developed
 
@@ -34,6 +34,8 @@ You can access the Rocketseat prototype by clicking the button below.
 ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Figma](https://img.shields.io/badge/FIGMA-2A2141?style=for-the-badge&logo=figma&logoColor=white)
 ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-8a3d9b?style=for-the-badge&logo=sweetalert2&logoColor=white)
+![Moment.js](https://img.shields.io/badge/Moment.js-42B983?style=for-the-badge&logo=moment.js&logoColor=white)
+![OpenWeather](https://img.shields.io/badge/OpenWeather-eb6e4b?style=for-the-badge&logo=openweather&logoColor=white)
 
 ## Services Used
 
