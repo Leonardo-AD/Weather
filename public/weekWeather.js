@@ -4,12 +4,11 @@ import {
     TempDay1, TempDay2, TempDay3, TempDay4, TempDay5
 } from '../export.js'
 
-export function weekWeather(city, rainStats, APIKey){//receive the json here to reduce the API calls and memory processing
+export function weekWeather(city, rainStats, APIKey){
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
     .then(res => res.json())    
     .then(json => {
-        // console.log(json)
 
         // example of propability in 3h (0.2mm x 100%) = 20% 
         let pop = json.list[0].pop * 100
@@ -61,4 +60,5 @@ export function weekWeather(city, rainStats, APIKey){//receive the json here to 
         setDaysOfWeek()
         setForecast()
     })
+    .catch( error => console.log(error) )
 }

@@ -2,6 +2,8 @@
 export const searchButton       = document.querySelector('#search-button')
 export const selectedCity       = document.querySelector('#selected-city-name')
 export const locationIcon       = document.querySelector('#location-icon')
+export const searchInput        = document.querySelector('#search-input')
+export const windDirection      = document.querySelector('#wind-icon')
 
 export const weatherTemperature = document.querySelector('#weather-temperature')
 export const maxTemp            = document.querySelector('#max-temperature')

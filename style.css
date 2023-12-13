@@ -211,6 +211,10 @@ section {
     gap: 1.2rem;
 }
 
+.stats #wind-icon {
+    rotate: 0;
+}
+
 .stats .info {
     color: #E7E6FB;
 }
@@ -225,6 +229,10 @@ section {
     display: flex;
     align-items: baseline;
     gap: .4rem
+}
+
+.stats .info h5#rain, h5#humidity {
+    gap: .12rem;
 }
 
 

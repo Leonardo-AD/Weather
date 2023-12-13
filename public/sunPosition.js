@@ -27,10 +27,10 @@ export function sunPosition(sunrise, sunset, timeNow, circlePosition, getDT, get
     // if the sunPosition > 100 his value will be set as 100, once that the sunPosition biger than 100 makes the circle continues his rotation and i don't want it
     
     let sunriseValue = sunrise.innerHTML.toString(10).replace(':','.')
-    let sunsetValue = sunset.innerHTML.toString(10).replace(':','.')
+    let sunsetValue  = sunset.innerHTML.toString(10).replace(':','.')
     let timeNowValue = timeNow.innerHTML.toString(10).replace(':','.')
 
-    let hoursGap = parseFloat(sunsetValue) - parseFloat(sunriseValue)
+    let hoursGap    = parseFloat(sunsetValue) - parseFloat(sunriseValue)
     let sunPosition = (timeNowValue - sunriseValue) * (100 / hoursGap)
 
     if(timeNowValue > sunriseValue && sunPosition > 0 && sunPosition <= 100){

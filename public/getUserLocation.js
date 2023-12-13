@@ -13,5 +13,6 @@ export function getUserLocation(APIKey, searchButton){
             document.querySelector('#search-input').value = json.name
             searchButton.click()
         })
+        .catch( error => console.log(error) )
     })
 }

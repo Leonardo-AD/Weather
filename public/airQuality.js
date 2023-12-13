@@ -1,8 +1,6 @@
 import {
-
     qualityStatus, qualityStatusRate,
     pm2_5, pm10, so2, no2, o3, co
-
 } from '../export.js'
 
 export function airQuality(latitude, longitude, APIKey) {
@@ -44,4 +42,5 @@ export function airQuality(latitude, longitude, APIKey) {
         o3.innerHTML    = json.list[0].components.o3.toFixed(0)
         co.innerHTML    = json.list[0].components.co.toFixed(0)
     })
+    .catch( error => console.log(error) )
 }
