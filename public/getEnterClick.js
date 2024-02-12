@@ -4,7 +4,7 @@ export function getEnterClick(searchInput, searchButton){
     searchInput.addEventListener("keypress", enterKey);
     
     function enterKey(event) {
-        if(event.code == "Enter"){
+        if(event.code === "Enter" || event.code === "NumpadEnter"){
             searchButton.click()
         }
     }

@@ -1,5 +1,7 @@
 // Temperature section
 export const searchButton       = document.querySelector('#search-button')
+export const voiceSearchButton  = document.querySelector('#voice-search-button')
+export const closeVoiceSearch   = document.querySelector('#close-voice-search')
 export const selectedCity       = document.querySelector('#selected-city-name')
 export const locationIcon       = document.querySelector('#location-icon')
 export const searchInput        = document.querySelector('#search-input')

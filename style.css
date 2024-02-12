@@ -11,7 +11,10 @@
     font-family: 'Lato', sans-serif;
 
     --bg-color: #6D67D0;
+    --bg-highlight-color: rgba(102, 96, 200, 1);
     --text-soft-color: #C2BFF4;
+    --primary-text-color: #DAD8F7;
+    --secondary-text-color: #E7E6FB;
 }
 
 body {
@@ -29,7 +32,7 @@ main {
 }
 
 
-/* Sweet alert popup color */
+/* Sweet alert style */
 .swal2-popup #swal2-html-container {
     font-size: 1.4rem;
 }
@@ -37,7 +40,7 @@ main {
 .swal2-actions button.swal2-confirm {
     background: var(--bg-color);
     color: var(--text-soft-color);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     font-family: 'Lato', sans-serif;
     letter-spacing: .05rem;
@@ -57,7 +60,7 @@ section {
 }
 
 .search input::placeholder {
-    color: #C2BFF4;
+    color: var(--text-soft-color);
     letter-spacing: .05rem;
     font-size: 1.4rem;
 }
@@ -73,12 +76,12 @@ section {
     letter-spacing: .08rem;
     color: #FFFFFF;
 
-    background: rgba(102, 96, 200, 1);
-    animation: width-animation-out .5s ease-out;
+    background: var(--bg-highlight-color);
+    animation: width-animation-out 500ms ease-out;
 }
 
 .search input:focus {
-    animation: width-animation-in .5s ease-in;
+    animation: width-animation-in 500ms ease-in;
     max-width: 31rem;
 }
 
@@ -96,13 +99,26 @@ section {
 
 .search button {
     outline: none;
-    color: #C2BFF4;
-    background: rgba(102, 96, 200, 1);
+    color: var(--text-soft-color);
+    background: var(--bg-highlight-color);
     border: none;
     padding: .5rem;
     border-radius: 0 .6rem .6rem 0;
     cursor: pointer;
     font-size: 2.2rem;
+    transition: 250ms ease-out;
+}
+
+.search #voice-search-button {
+    border-radius: 0;
+}
+
+.search #close-voice-search {
+    display: none;
+}
+
+.search button:hover {
+    color: #FFFFFF;
 }
 
 .temperature-now {
@@ -117,7 +133,7 @@ section {
 
     display: flex;
     align-items: center;
-    gap: .4rem;
+    gap: 2.4rem;
 }
 
 .selected-city {
@@ -189,7 +205,7 @@ section {
 
 .celsius {
     font-size: 2.4rem;
-    color: #DAD8F7;
+    color: var(--primary-text-color);
     margin-top: 1.5rem;
     letter-spacing: .08rem;
 }
@@ -203,20 +219,21 @@ section {
 .stats {
     flex: 1;
     padding: 1.2rem 1.6rem;
-    background: rgba(102, 96, 200, 1);
+    background: var(--bg-highlight-color);
     border-radius: .6rem;
 
     display: flex;
     align-items: center;
     gap: 1.2rem;
-}
+} 
 
 .stats #wind-icon {
     rotate: 0;
+    transition: 500ms ease-out;
 }
 
 .stats .info {
-    color: #E7E6FB;
+    color: var(--secondary-text-color);
 }
 
 .stats .info h5 span,
@@ -245,7 +262,7 @@ section {
 
 h2.title {
     font-size: 1.6rem;
-    color: #DAD8F7;
+    color: var(--primary-text-color);
     margin-top: 3.2rem;
 
     display: flex;
@@ -275,6 +292,17 @@ h2.title {
 
 .air-quality .info .number {
     flex: 1;
+    transition: 250ms ease-out;
+}
+
+.info .number:hover {
+    -ms-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+.info .number:hover small {
+    color: #FFFFFF;
 }
 
 .air-quality .info p {
@@ -286,9 +314,10 @@ h2.title {
 
 .air-quality .info small {
     font-size: 1.2rem;
-    color: #E7E6FB;
+    color: var(--secondary-text-color);
     font-weight: 400;
     letter-spacing: .08rem;
+    transition: 250ms ease-out;
 }
 
 
@@ -318,6 +347,7 @@ h2.title {
     left: 50%;
     margin: -.6rem;
     transform: rotate(calc( 1deg * (( (100 - var(--pos-x)) / -100 ) * 180) )) translate(10.6rem);
+    transition: 500ms ease-out;
 }
 
 .chart {
@@ -340,6 +370,7 @@ h2.title {
     -webkit-mask: var(--mask);
     
     rotate: calc(1.8deg * var(--pos-x));
+    transition: 500ms ease-out;
 }
 
 .chart img {
@@ -353,7 +384,7 @@ time.now {
     left: 50%;
     transform: translate(-50%);
 
-    color: #FFFFFF;
+    color: var(--secondary-text-color);
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: .08rem;
@@ -361,7 +392,7 @@ time.now {
 
 .time {
     font-size: 1.2rem;
-    color: #FFFFFF;
+    color: var(--secondary-text-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -385,6 +416,17 @@ time.now {
     display: grid;
     justify-items: center;
     align-items: center;
+    transition: 250ms ease-out;
+}
+
+.day:hover {
+    -ms-transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+}
+
+.day:hover h4{
+    color: #FFFFFF;
 }
 
 .day img {
@@ -393,8 +435,9 @@ time.now {
 
 h4.title {
     font-size: 1.4rem;
-    color: #DAD8F7;
+    color: var(--primary-text-color);
     letter-spacing: .04rem;
+    transition: 250ms ease-out;
 }
 
 .day .max-min {
@@ -422,7 +465,7 @@ h4.title {
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 600px) {
     main {
         background: url('./assets/background.jpg') no-repeat center/cover;
         padding: 6.4rem 0;
@@ -431,6 +474,7 @@ h4.title {
     .location {
         display: flex;
         flex-direction: column;
+        gap: 0;
     }
 
     .selected-city {
@@ -442,7 +486,7 @@ h4.title {
     .air-quality,
     .sun-time,
     .week-weather {
-        max-width: 31rem;
+        width: 37rem;
     }
 
     .temperature-now::before {
@@ -452,23 +496,14 @@ h4.title {
     .statistics {
         justify-content: center;
         padding: 1rem 0;
-        gap: .5rem;
+        gap: 1rem;
     }
 
     .stats {
-        padding: 1rem 0;
+        padding: 1rem .5rem;
         align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        max-width: 10rem;
-    }
-
-    #stats-wind {
-        border-radius: 0 .6rem .6rem 0;
-    }
-    
-    #stats-rainy {
-        border-radius: .6rem 0 0 .6rem;
+        gap: 1rem;
+        max-width: 11rem;
     }
 
     .stats .info h5 {
@@ -567,7 +602,7 @@ h4.title {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 390px) {
     main {
         background: url('./assets/background.jpg') no-repeat center/cover;
         padding: 6.4rem 0;
@@ -587,7 +622,7 @@ h4.title {
     .air-quality,
     .sun-time,
     .week-weather {
-        width: 37rem;
+        max-width: 31rem;
     }
 
     .temperature-now::before {
@@ -597,14 +632,23 @@ h4.title {
     .statistics {
         justify-content: center;
         padding: 1rem 0;
-        gap: 1rem;
+        gap: .5rem;
     }
 
     .stats {
-        padding: 1rem .5rem;
+        padding: 1rem 0;
         align-items: center;
-        gap: 1rem;
-        max-width: 11rem;
+        justify-content: center;
+        gap: 1.5rem;
+        max-width: 10rem;
+    }
+
+    #stats-wind {
+        border-radius: 0 .6rem .6rem 0;
+    }
+    
+    #stats-rainy {
+        border-radius: .6rem 0 0 .6rem;
     }
 
     .stats .info h5 {

@@ -1,6 +1,11 @@
-import { searchButton, searchInput, APIKey, rainStats, windDirection, sunrise, sunset, timeNow, circlePosition } from './export.js'
+import {   
+            searchButton, searchInput, APIKey, rainStats, windDirection, sunrise, sunset, 
+            timeNow, circlePosition, voiceSearchButton, closeVoiceSearch
 
-import { getEnterClick, getUserLocation, temperature, airQuality, weekWeather, sunPosition, errorAlert } from './public/index.js'
+        }         
+from './export.js'
+
+import { getEnterClick, getUserLocation, temperature, airQuality, weekWeather, sunPosition, errorAlert, voiceSearch } from './public/index.js'
 
 // Calling the function that gets Enter key press to search a city input
 getEnterClick(searchInput, searchButton)
@@ -9,8 +14,11 @@ getEnterClick(searchInput, searchButton)
 getUserLocation(APIKey, searchButton)
 
 
-// Getting click to search
+// Getting click or voice to search
+voiceSearchButton.addEventListener('click', () => { voiceSearch(searchButton, voiceSearchButton, closeVoiceSearch, searchInput) })
+
 searchButton.addEventListener('click', () => {
+    
     const city = document.querySelector('#search-input').value
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}&lang=pt_br`)
